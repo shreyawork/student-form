@@ -1,0 +1,258 @@
+*{
+    box-sizing:border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+body{
+    background-image: linear-gradient(to right,#21203b,#3535c2,#2e3db3);
+    margin:0;
+    padding: 0;
+}
+.heading{
+    text-align: center;
+    padding: 4px 0;
+    color: white;
+    height: 100px;
+    position: relative;
+    cursor: pointer;
+    background-color: #2a2969;
+}
+    .heading::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 100px;
+        height: 3px;
+        background-color: white;
+        transform: translateX(-50%);
+        animation: line-expand 2.5s ease-out infinite;
+    }
+    @keyframes line-expand {
+        0%,
+        100% {
+            width: 0;
+        }
+        50% {
+            width: 100px;
+        }
+    }
+    .heading:hover h1 {
+        transform: scale(1.1);
+    }
+    
+    .main-title {
+        margin: 0;
+        font-size: 2.5em;
+        transition: transform 0.3s ease-in-out;
+    }
+.description {
+    font-size: 1.1em;
+    margin-top: 0.5em;
+}
+/* --------------Main Content------------ */
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 64px;
+}
+
+/* Registration Form Section */
+
+.registration-section {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    color: #171313;
+    background: linear-gradient(to bottom right, #b1ace0 0%, #dad9e3eb 50%, #c7d9e7fc 50%, #222678 100%);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 60%);
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+.student-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-title {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.form-label {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.form-input {
+    padding: 10px;
+    background-color: #dbb67b38;
+    border: 1px solid #4e4444;
+    border-color: #171313;
+}
+.submit-button{
+background-color: #3535c2;
+color: white;
+cursor: pointer;
+
+
+}
+.submit-button:hover{
+    background-color: #7777e7;
+}
+/* Edit Button */
+
+.edit-button {
+    background: linear-gradient(to right, #e4e6efc9, #7777e7);
+    color: white;
+    font-weight: 700;
+    margin-right: 5px;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.edit-button:hover {
+    background: linear-gradient(to right, #0b410e, #20310e);
+}
+
+/* Delete Button */
+
+.delete-button {
+    background: linear-gradient(to right,#e4e6efc9, #7777e7);
+    color: white;
+    font-weight: 700;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background: linear-gradient(to right, #7B1FA2, #D81B60);
+}
+
+/* -------------Registered Students Table ---------------- */
+
+.records-section {
+    padding: 20px;
+    align-self: center;
+    background: linear-gradient(to bottom right, #b1ace0 0%, #dad9e3eb 50%, #c7d9e7fc 50%, #8c8fc9 100%);
+    color: black;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgb(23 1 1);
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+.records-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    max-height: 353px;
+    overflow-y: auto;
+    display: block;
+}
+
+th,
+td {
+    border: 1px solid #fefefe99;
+    padding: 8px;
+}
+
+th {
+    background-color: #000000b5;
+    color: #ffffffc7;
+}
+
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
+}/* footer section */
+footer {
+  background-color: #211693;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  
+}
+
+
+.social a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.social a i {
+  font-size: 24px;
+}
+.social a:hover{
+  color: #3f517e;
+}
+/* Tablet responsiveness (iPad Mini) */
+/* @media only screen and (min-width: 741px) and (max-width: 1024px) { */
+
+
+/* For Samsung Galaxy S8+ */
+@media only screen and (min-width: 360px) and (max-width: 740px) {
+  .container{ 
+    display: flex;
+    justify-content: space-between;
+  }
+  .hero-image img {
+    
+    object-fit: cover;
+    border-radius: 10px;  
+     }
+
+  
+}
+
+/* Responsive adjustments */
+
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .records-section {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .records-table {
+        width: 100%;
+    }
+
+    th,
+    td {
+        padding: 12px 8px;
+    }
+}
